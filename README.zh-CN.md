@@ -140,4 +140,4 @@ jisuxiang/
 
 ## 🔗 链接
 
-- GitHub仓库: [https://github.com/yourusername/jisuxiang](https://github.com/yourusername/jisuxiang) 
+- GitHub仓库: [https://github.com/star7th/jisuxiang](https://github.com/star7th/jisuxiang) 

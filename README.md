@@ -140,5 +140,5 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ## 🔗 Links
 
-- GitHub Repository: [https://github.com/yourusername/jisuxiang](https://github.com/yourusername/jisuxiang)
+- GitHub Repository: [https://github.com/star7th/jisuxiang](https://github.com/star7th/jisuxiang)
 
