@@ -34,7 +34,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: jisuxiang
+          images: star7th/jisuxiang
           tags: |
             type=ref,event=branch
             type=ref,event=pr
