@@ -43,11 +43,29 @@ JiSuXiang (极速箱) is a high-quality, visually appealing online developer too
 - [Font Awesome](https://fontawesome.com) - Icon library
 - [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
 
-## 📦 Installation
+## 📦 Installation & Deployment
+
+### Using Docker (Recommended)
+
+The easiest way to run JiSuXiang is using our official Docker image from Docker Hub:
+
+```bash
+# For x86/x64 architecture
+docker pull star7th/jisuxiang:latest
+docker run -d --name jisuxiang --restart always -p 3000:3000 star7th/jisuxiang:latest
+
+# For ARM architecture (e.g., Raspberry Pi, Apple Silicon)
+docker pull star7th/jisuxiang:arm-latest
+docker run -d --name jisuxiang --restart always -p 3000:3000 star7th/jisuxiang:arm-latest
+```
+
+### Using Node.js
+
+For local development or deployment on a Node.js server:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/jisuxiang.git
+git clone https://github.com/star7th/jisuxiang.git
 cd jisuxiang
 ```
 
@@ -71,24 +89,7 @@ pnpm dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## 🚢 Deployment
-
-### Using Docker
-
-A Dockerfile is provided for containerized deployment:
-
-```bash
-# Build the Docker image
-docker build -t jisuxiang .
-
-# Run the container
-docker run -p 3000:3000 jisuxiang
-```
-
-### Using Node.js
-
-For production deployment on a Node.js server:
-
+For production deployment:
 ```bash
 # Build the application
 npm run build

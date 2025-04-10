@@ -43,11 +43,29 @@
 - [Font Awesome](https://fontawesome.com) - 图标库
 - [TypeScript](https://www.typescriptlang.org/) - 类型安全的JavaScript
 
-## 📦 安装方法
+## 📦 安装与部署
+
+### 使用Docker部署（推荐）
+
+使用Docker Hub上的官方镜像是运行极速箱最简单的方式：
+
+```bash
+# 适用于x86/x64架构
+docker pull star7th/jisuxiang:latest
+docker run -d --name jisuxiang --restart always -p 3000:3000 star7th/jisuxiang:latest
+
+# 适用于ARM架构（如树莓派、Apple Silicon）
+docker pull star7th/jisuxiang:arm-latest
+docker run -d --name jisuxiang --restart always -p 3000:3000 star7th/jisuxiang:arm-latest
+```
+
+### 使用Node.js部署
+
+用于本地开发或在Node.js服务器上部署：
 
 1. 克隆仓库:
 ```bash
-git clone https://github.com/yourusername/jisuxiang.git
+git clone https://github.com/star7th/jisuxiang.git
 cd jisuxiang
 ```
 
@@ -71,24 +89,7 @@ pnpm dev
 
 4. 在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看应用。
 
-## 🚢 部署说明
-
-### 使用Docker部署
-
-提供了Dockerfile用于容器化部署:
-
-```bash
-# 构建Docker镜像
-docker build -t jisuxiang .
-
-# 运行容器
-docker run -p 3000:3000 jisuxiang
-```
-
-### 使用Node.js部署
-
-在Node.js服务器上进行生产部署:
-
+生产环境部署:
 ```bash
 # 构建应用
 npm run build
