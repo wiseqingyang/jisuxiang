@@ -1,10 +1,10 @@
 # 极速箱 | 高效开发工具集成平台
 
+**中文** | **[English Documentation](README.md)**
+
 极速箱是一个高颜值的在线开发工具箱，提供各种程序员必备的开发工具，帮助开发者提升编程效率。本项目使用 Next.js 和 TailwindCSS 开发，拥有美观现代的界面设计。
 
 **在线演示**: [https://www.jisuxiang.com/](https://www.jisuxiang.com/) - 立即体验！
-
-[English Documentation](README.md)
 
 ## 🚀 功能特点
 

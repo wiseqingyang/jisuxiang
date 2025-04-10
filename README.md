@@ -1,14 +1,10 @@
-[中文文档](README.zh-CN.md)
+# JiSuXiang | Developer Toolbox
 
-## JiSuXiang | Developer Toolbox
+**[中文文档](README.zh-CN.md)** | **English**
 
 JiSuXiang (极速箱) is a high-quality, visually appealing online developer toolbox that provides a comprehensive collection of essential development tools for programmers. Built with Next.js and TailwindCSS, this platform offers a wide range of utilities for everyday programming tasks with a beautiful, modern UI design.
 
 **Live Demo**: [https://www.jisuxiang.com/](https://www.jisuxiang.com/) - Try it now!
-
-
-
-
 
 ## 🚀 Features
 
