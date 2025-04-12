@@ -16,6 +16,7 @@ import jsonEditor from './json_editor';
 import jwtDecoder from './jwt_decoder';
 import qrcodeGenerator from './qrcode_generator';
 import textCounter from './text_counter';
+import textSpaceStripper from './text_space_stripper';
 import timezoneConverter from './timezone_converter';
 import unicodeConverter from './unicode_converter';
 import urlEncoder from './url_encoder';
@@ -39,6 +40,7 @@ export const tools = {
   jwt_decoder: jwtDecoder,
   qrcode_generator: qrcodeGenerator,
   text_counter: textCounter,
+  text_space_stripper: textSpaceStripper,
   timezone_converter: timezoneConverter,
   unicode_converter: unicodeConverter,
   url_encoder: urlEncoder

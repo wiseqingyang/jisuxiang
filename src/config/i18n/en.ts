@@ -22,6 +22,7 @@ export const en = {
     jwt_decoder: tools.jwt_decoder.en,
     qrcode_generator: tools.qrcode_generator.en,
     text_counter: tools.text_counter.en,
+    text_space_stripper: tools.text_space_stripper.en,
     timezone_converter: tools.timezone_converter.en,
     unicode_converter: tools.unicode_converter.en,
     url_encoder: tools.url_encoder.en

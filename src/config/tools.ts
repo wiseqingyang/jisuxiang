@@ -1,7 +1,8 @@
 import { 
   faCode, faExchangeAlt, faClock, faGlobe, faLink, faLock, 
   faImage, faCogs, faFileCode, faKey, faFont, 
-  faCalendarAlt, faPalette, faEdit, faRuler, faNetworkWired 
+  faCalendarAlt, faPalette, faEdit, faRuler, faNetworkWired,
+  faEraser
 } from '@fortawesome/free-solid-svg-icons';
 import { Tool } from '@/types/tools';
 
@@ -110,6 +111,12 @@ const tools: Tool[] = [
     icon: faRuler,
     category: ['text'],
     keywords: ['字数统计', '字符统计', '字数', '词数', '行数', '计数', 'word count', 'character count', 'zishu', 'zs', 'tongji', 'tj']
+  },
+  {
+    code: 'text_space_stripper',
+    icon: faEraser,
+    category: ['text'],
+    keywords: ['去空格', '去换行', '去空白', '字符串处理', '文本处理', '空格删除', '换行符', 'trim', 'strip', 'space', 'whitespace', 'newline']
   },
   {
     code: 'html_markdown_converter',

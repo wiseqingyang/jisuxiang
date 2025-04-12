@@ -22,6 +22,7 @@ export const zh = {
     jwt_decoder: tools.jwt_decoder.zh,
     qrcode_generator: tools.qrcode_generator.zh,
     text_counter: tools.text_counter.zh,
+    text_space_stripper: tools.text_space_stripper.zh,
     timezone_converter: tools.timezone_converter.zh,
     unicode_converter: tools.unicode_converter.zh,
     url_encoder: tools.url_encoder.zh
