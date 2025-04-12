@@ -10,6 +10,7 @@ export const timestampConverterEn = {
   this_month_start: 'This Month Start',
   this_year_start: 'This Year Start',
   enter_unix_timestamp: 'Enter Unix timestamp',
+  enter_datetime: 'Enter date & time (e.g. 2099-12-31 23:59:59)',
   use_current_time: 'Use Current Time',
   common_timestamps: 'Common Timestamps',
   copy_timestamp: 'Copy Timestamp',

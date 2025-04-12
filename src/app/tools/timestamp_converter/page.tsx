@@ -22,8 +22,11 @@ const styles = {
 
 export default function TimestampConverter() {
   const { t } = useLanguage();
-  // 当前系统时间
-  const [currentTime, setCurrentTime] = useState(new Date());
+  // 当前系统时间（用于内部计算，不直接渲染）
+  const [_currentTime, setCurrentTime] = useState(new Date());
+  
+  // 显示的当前时间戳，避免服务器端渲染不匹配问题
+  const [displayTimestamp, setDisplayTimestamp] = useState<string>('');
   
   // 时间戳和日期时间的状态
   const [timestamp, setTimestamp] = useState('');
@@ -52,6 +55,9 @@ export default function TimestampConverter() {
       setCurrentTime(now);
       updateCommonTimestamps(now);
       
+      // 客户端设置当前时间戳显示
+      setDisplayTimestamp(Math.floor(now.getTime() / 1000).toString());
+      
       // 标记为已初始化
       setIsInitialized(true);
     }
@@ -70,6 +76,9 @@ export default function TimestampConverter() {
   const updateCurrentTime = () => {
     const now = new Date();
     setCurrentTime(now);
+    
+    // 设置当前时间戳显示，客户端渲染
+    setDisplayTimestamp(Math.floor(now.getTime() / 1000).toString());
     
     // 只更新常用时间戳列表，不修改用户输入
     updateCommonTimestamps(now);
@@ -166,6 +175,9 @@ export default function TimestampConverter() {
           const seconds = String(date.getSeconds()).padStart(2, '0');
           
           setFormattedDateTime(`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+          
+          // 同时更新datetime输入框格式
+          setDateTime(`${year}-${month}-${day}T${hours}:${minutes}:${seconds}`);
         }
       } catch (error) {
         console.error(t('tools.timestamp_converter.datetime_format_error'), error);
@@ -173,6 +185,13 @@ export default function TimestampConverter() {
     }
     
     dateTimeToTimestamp(value);
+  };
+  
+  // 使用常用时间戳
+  const handleUseCommonTimestamp = (ts: number) => {
+    const tsStr = ts.toString();
+    setTimestamp(tsStr);
+    timestampToDateTime(tsStr);
   };
   
   // 刷新计算，使用当前时间
@@ -183,11 +202,23 @@ export default function TimestampConverter() {
     timestampToDateTime(currentTimestamp.toString());
   };
   
-  // 使用常用时间戳
-  const handleUseCommonTimestamp = (ts: number) => {
-    const tsStr = ts.toString();
-    setTimestamp(tsStr);
-    timestampToDateTime(tsStr);
+  // 使用当前时间更新日期时间输入
+  const setCurrentDateTime = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    const nowDateTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+    setDateTime(nowDateTime);
+    setFormattedDateTime(`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+    
+    // 转换为时间戳
+    const timestamp = Math.floor(now.getTime() / 1000);
+    setTimestamp(timestamp.toString());
   };
   
   // 复制时间戳到剪贴板
@@ -236,7 +267,7 @@ export default function TimestampConverter() {
         <h2 className="text-lg font-medium text-primary">{t('tools.timestamp_converter.timestamp')}</h2>
         <div className="flex items-center text-xs text-tertiary">
           <span className="mr-1">{t('tools.timestamp_converter.current_time_colon')}</span>
-          <span>{Math.floor(currentTime.getTime() / 1000)}</span>
+          <span>{displayTimestamp}</span>
         </div>
       </div>
       
@@ -298,12 +329,19 @@ export default function TimestampConverter() {
       
       <div className="relative">
         <input
-          type="datetime-local"
+          type="text"
           value={dateTime}
           onChange={handleDateTimeChange}
+          placeholder={t('tools.timestamp_converter.enter_datetime')}
           className={styles.input}
-          step="1"
         />
+        <button 
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-tertiary hover:text-purple transition-colors"
+          onClick={setCurrentDateTime}
+          title={t('tools.timestamp_converter.use_current_time')}
+        >
+          <FontAwesomeIcon icon={faSync} />
+        </button>
       </div>
       
       {formattedDateTime && (

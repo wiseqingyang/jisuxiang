@@ -10,6 +10,7 @@ export const timestampConverterZh = {
   this_month_start: '本月初',
   this_year_start: '今年初',
   enter_unix_timestamp: '请输入Unix时间戳',
+  enter_datetime: '请输入日期时间（如：2099-12-31 23:59:59）',
   use_current_time: '使用当前时间',
   common_timestamps: '常用时间戳',
   copy_timestamp: '复制时间戳',
