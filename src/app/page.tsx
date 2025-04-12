@@ -16,9 +16,9 @@ import { useLanguage } from '@/context/LanguageContext';
 export default function Home() {
   const { t, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState(() => {
-    // 从 sessionStorage 获取上次选择的分类，如果没有则默认为 "all"
+    // 从 localStorage 获取上次选择的分类，如果没有则默认为 "all"
     if (typeof window !== 'undefined') {
-      return sessionStorage.getItem('lastActiveCategory') || "all";
+      return localStorage.getItem('lastActiveCategory') || "all";
     }
     return "all";
   });
@@ -217,10 +217,10 @@ export default function Home() {
     const isPrefetched = prefetchedTools.has(toolCode);
 
     // 检查是否是首次访问该工具
-    const isFirstVisit = !sessionStorage.getItem(`visited-${toolCode}`);
+    const isFirstVisit = !localStorage.getItem(`visited-${toolCode}`);
     
     // 记录已访问工具
-    sessionStorage.setItem(`visited-${toolCode}`, 'true');
+    localStorage.setItem(`visited-${toolCode}`, 'true');
     
     // 打印调试信息 - 开发环境
     if (process.env.NODE_ENV === 'development') {
@@ -230,13 +230,13 @@ export default function Home() {
     // 如果已预加载，直接导航，不显示loading
     if (isPrefetched) {
       // 在导航前存储一个标志，表示这是从主页导航过来的
-      sessionStorage.setItem('from_homepage', 'true');
+      localStorage.setItem('from_homepage', 'true');
       router.push(`/tools/${toolCode}`);
       return;
     }
     
     // 在导航前存储一个标志，表示这是从主页导航过来的
-    sessionStorage.setItem('from_homepage', 'true');
+    localStorage.setItem('from_homepage', 'true');
     
     const loadingId = 'loading-indicator-' + Date.now();
     const loadingEl = document.createElement('div');
@@ -466,8 +466,8 @@ export default function Home() {
   // 更新分类选择处理函数
   const handleCategoryChange = (categoryCode: string) => {
     setActiveCategory(categoryCode);
-    // 保存到 sessionStorage
-    sessionStorage.setItem('lastActiveCategory', categoryCode);
+    // 保存到 localStorage
+    localStorage.setItem('lastActiveCategory', categoryCode);
   };
 
   return (
