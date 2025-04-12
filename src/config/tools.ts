@@ -2,7 +2,7 @@ import {
   faCode, faExchangeAlt, faClock, faGlobe, faLink, faLock, 
   faImage, faCogs, faFileCode, faKey, faFont, 
   faCalendarAlt, faPalette, faEdit, faRuler, faNetworkWired,
-  faEraser
+  faEraser, faCalculator
 } from '@fortawesome/free-solid-svg-icons';
 import { Tool } from '@/types/tools';
 
@@ -141,6 +141,12 @@ const tools: Tool[] = [
     icon: faCogs,
     category: ['frontend'],
     keywords: ['css渐变', '渐变', '渐变背景', 'css', 'gradient', '背景', 'css生成器', 'jianbian', 'jb', 'beijing', 'bj']
+  },
+  {
+    code: 'number_base_converter',
+    icon: faCalculator,
+    category: ['encoding'],
+    keywords: ['进制转换', '进制', '二进制', '八进制', '十进制', '十六进制', '二进制转换', '十六进制转换', 'binary', 'hex', 'decimal', 'octal', 'base conversion', 'jinzhi', 'jzzh', 'jz']
   }
 ] as Tool[];
 

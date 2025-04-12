@@ -25,7 +25,8 @@ export const zh = {
     text_space_stripper: tools.text_space_stripper.zh,
     timezone_converter: tools.timezone_converter.zh,
     unicode_converter: tools.unicode_converter.zh,
-    url_encoder: tools.url_encoder.zh
+    url_encoder: tools.url_encoder.zh,
+    number_base_converter: tools.number_base_converter.zh
   }
 };
 

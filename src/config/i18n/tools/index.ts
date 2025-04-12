@@ -20,6 +20,7 @@ import textSpaceStripper from './text_space_stripper';
 import timezoneConverter from './timezone_converter';
 import unicodeConverter from './unicode_converter';
 import urlEncoder from './url_encoder';
+import numberBaseConverter from './number_base_converter';
 
 export const tools = {
   json_formatter: jsonFormatter,
@@ -43,7 +44,8 @@ export const tools = {
   text_space_stripper: textSpaceStripper,
   timezone_converter: timezoneConverter,
   unicode_converter: unicodeConverter,
-  url_encoder: urlEncoder
+  url_encoder: urlEncoder,
+  number_base_converter: numberBaseConverter
 };
 
 export default tools; 

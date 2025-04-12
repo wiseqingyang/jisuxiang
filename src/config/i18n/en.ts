@@ -25,7 +25,8 @@ export const en = {
     text_space_stripper: tools.text_space_stripper.en,
     timezone_converter: tools.timezone_converter.en,
     unicode_converter: tools.unicode_converter.en,
-    url_encoder: tools.url_encoder.en
+    url_encoder: tools.url_encoder.en,
+    number_base_converter: tools.number_base_converter.en
   }
 };
 
