@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faCode, faCopy, faCheck, faCompress, faExpand, 
   faSearch, faTrash, faSync, faFolderOpen, faFolder, faSpinner,
-  faSave, faHistory, faTimes, faEdit, faStar, faTrashAlt
+  faSave, faHistory, faTimes, faEdit, faStar, faTrashAlt, faEraser
 } from '@fortawesome/free-solid-svg-icons';
 import dynamic from 'next/dynamic';
 import BackToTop from '@/components/BackToTop';
@@ -182,6 +182,33 @@ export default function JsonFormatter() {
   // 切换折叠功能
   const toggleFoldable = () => {
     setIsFoldable(!isFoldable);
+  };
+  
+  // 移除JSON中的转义斜杠
+  const removeSlashes = () => {
+    if (!jsonInput) return;
+    
+    try {
+      // 直接在原始输入字符串上移除转义斜杠
+      const processed = jsonInput.replace(/\\\//g, '/');
+      
+      // 检查是否有变化
+      if (processed === jsonInput) {
+        console.log('没有检测到需要替换的内容，JSON未改变');
+        return;
+      }
+      
+      console.log('移除斜杠前:', jsonInput);
+      console.log('移除斜杠后:', processed);
+      
+      // 更新输入框而不是直接格式化
+      setJsonInput(processed);
+      
+      // 手动触发格式化
+      setTimeout(() => formatJson(processed, isCompressed), 100);
+    } catch (error) {
+      console.error('移除斜杠处理失败:', error);
+    }
   };
   
   // 复制结果到剪贴板
@@ -755,6 +782,16 @@ export default function JsonFormatter() {
         >
           <FontAwesomeIcon icon={faHistory} />
           <span>{t('tools.json_formatter.history')}</span>
+        </button>
+        
+        {/* 移除斜杠按钮 */}
+        <button 
+          className={`${toolbarButtonClass} bg-[rgb(var(--color-bg-secondary))] text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text-primary))]`}
+          onClick={removeSlashes} 
+          disabled={!jsonInput || isLoading}
+        >
+          <FontAwesomeIcon icon={faEraser} />
+          <span>{t('tools.json_formatter.remove_slash')}</span>
         </button>
         
         {isLoading && (

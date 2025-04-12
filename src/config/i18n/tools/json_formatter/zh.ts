@@ -57,7 +57,8 @@ export const jsonFormatterZh = {
   guide_4: 'JSONPath查询支持点符号(如author.name)和数组索引(如features[0])',
   guide_5: '展示压缩/美化模式可以自由切换',
   guide_6: '处理大型JSON数据可能需要几秒钟时间',
-  guide_7: '可以保存多个JSON数据到历史记录中，方便比较查看'
+  guide_7: '可以保存多个JSON数据到历史记录中，方便比较查看',
+  remove_slash: '移除斜杠'
 };
 
 export default jsonFormatterZh; 

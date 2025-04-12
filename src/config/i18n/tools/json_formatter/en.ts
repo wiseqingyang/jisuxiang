@@ -57,7 +57,8 @@ export const jsonFormatterEn = {
   guide_4: 'JSONPath queries support dot notation (e.g., author.name) and array indices (e.g., features[0])',
   guide_5: 'Compress/Beautify mode can be freely switched',
   guide_6: 'Processing large JSON data may take a few seconds',
-  guide_7: 'Multiple JSON data can be saved to history for comparison'
+  guide_7: 'Multiple JSON data can be saved to history for comparison',
+  remove_slash: 'Remove Slashes'
 };
 
 export default jsonFormatterEn; 
