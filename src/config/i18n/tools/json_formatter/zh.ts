@@ -58,7 +58,10 @@ export const jsonFormatterZh = {
   guide_5: '展示压缩/美化模式可以自由切换',
   guide_6: '处理大型JSON数据可能需要几秒钟时间',
   guide_7: '可以保存多个JSON数据到历史记录中，方便比较查看',
-  remove_slash: '移除斜杠'
+  guide_8: '提供字符串转义和反转义功能，处理特殊字符',
+  remove_slash: '移除斜杠',
+  escape_string: '字符串转义',
+  unescape_string: '字符串反转义'
 };
 
 export default jsonFormatterZh; 

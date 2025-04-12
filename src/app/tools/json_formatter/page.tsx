@@ -211,6 +211,66 @@ export default function JsonFormatter() {
     }
   };
   
+  // 字符串转义
+  const escapeString = () => {
+    if (!jsonInput) return;
+    
+    try {
+      // 将常见字符转义为JSON字符串中的格式
+      const processed = jsonInput
+        .replace(/\\/g, '\\\\')    // 先转义反斜杠
+        .replace(/"/g, '\\"')      // 转义双引号
+        .replace(/\n/g, '\\n')     // 转义换行符
+        .replace(/\r/g, '\\r')     // 转义回车符
+        .replace(/\t/g, '\\t')     // 转义制表符
+        .replace(/\f/g, '\\f')     // 转义换页符
+        .replace(/\b/g, '\\b');    // 转义退格符
+      
+      // 检查是否有变化
+      if (processed === jsonInput) {
+        console.log('没有检测到需要转义的内容');
+        return;
+      }
+      
+      // 更新输入框
+      setJsonInput(processed);
+      
+      // 不需要立即格式化，因为用户可能还需要进一步编辑
+    } catch (error) {
+      console.error('字符串转义处理失败:', error);
+    }
+  };
+  
+  // 字符串反转义
+  const unescapeString = () => {
+    if (!jsonInput) return;
+    
+    try {
+      // 将JSON字符串中的转义字符还原为原始字符
+      const processed = jsonInput
+        .replace(/\\"/g, '"')      // 反转义双引号
+        .replace(/\\n/g, '\n')     // 反转义换行符
+        .replace(/\\r/g, '\r')     // 反转义回车符
+        .replace(/\\t/g, '\t')     // 反转义制表符
+        .replace(/\\f/g, '\f')     // 反转义换页符
+        .replace(/\\b/g, '\b')     // 反转义退格符
+        .replace(/\\\\/g, '\\');   // 最后反转义反斜杠
+      
+      // 检查是否有变化
+      if (processed === jsonInput) {
+        console.log('没有检测到需要反转义的内容');
+        return;
+      }
+      
+      // 更新输入框
+      setJsonInput(processed);
+      
+      // 不需要立即格式化，因为用户可能还需要进一步编辑
+    } catch (error) {
+      console.error('字符串反转义处理失败:', error);
+    }
+  };
+  
   // 复制结果到剪贴板
   const copyToClipboard = () => {
     if (jsonOutput) {
@@ -794,6 +854,26 @@ export default function JsonFormatter() {
           <span>{t('tools.json_formatter.remove_slash')}</span>
         </button>
         
+        {/* 字符串转义按钮 */}
+        <button 
+          className={`${toolbarButtonClass} bg-[rgb(var(--color-bg-secondary))] text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text-primary))]`}
+          onClick={escapeString} 
+          disabled={!jsonInput || isLoading}
+        >
+          <FontAwesomeIcon icon={faCode} />
+          <span>{t('tools.json_formatter.escape_string')}</span>
+        </button>
+        
+        {/* 字符串反转义按钮 */}
+        <button 
+          className={`${toolbarButtonClass} bg-[rgb(var(--color-bg-secondary))] text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text-primary))]`}
+          onClick={unescapeString} 
+          disabled={!jsonInput || isLoading}
+        >
+          <FontAwesomeIcon icon={faSync} />
+          <span>{t('tools.json_formatter.unescape_string')}</span>
+        </button>
+        
         {isLoading && (
           <button 
             className="px-3 py-1.5 rounded text-sm flex items-center gap-1 transition-all border"
@@ -1085,6 +1165,7 @@ export default function JsonFormatter() {
           <li>{t('tools.json_formatter.guide_5')}</li>
           <li>{t('tools.json_formatter.guide_6')}</li>
           <li>{t('tools.json_formatter.guide_7')}</li>
+          <li>{t('tools.json_formatter.guide_8')}</li>
         </ul>
       </div>
 

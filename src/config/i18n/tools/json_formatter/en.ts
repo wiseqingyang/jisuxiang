@@ -58,7 +58,10 @@ export const jsonFormatterEn = {
   guide_5: 'Compress/Beautify mode can be freely switched',
   guide_6: 'Processing large JSON data may take a few seconds',
   guide_7: 'Multiple JSON data can be saved to history for comparison',
-  remove_slash: 'Remove Slashes'
+  guide_8: 'Provides string escape and unescape functions for special characters',
+  remove_slash: 'Remove Slashes',
+  escape_string: 'Escape String',
+  unescape_string: 'Unescape String'
 };
 
 export default jsonFormatterEn; 
