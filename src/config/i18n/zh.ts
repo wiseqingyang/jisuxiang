@@ -26,7 +26,8 @@ export const zh = {
     timezone_converter: tools.timezone_converter.zh,
     unicode_converter: tools.unicode_converter.zh,
     url_encoder: tools.url_encoder.zh,
-    number_base_converter: tools.number_base_converter.zh
+    number_base_converter: tools.number_base_converter.zh,
+    yml_properties_converter: tools.yml_properties_converter.zh
   }
 };
 

@@ -26,7 +26,8 @@ export const en = {
     timezone_converter: tools.timezone_converter.en,
     unicode_converter: tools.unicode_converter.en,
     url_encoder: tools.url_encoder.en,
-    number_base_converter: tools.number_base_converter.en
+    number_base_converter: tools.number_base_converter.en,
+    yml_properties_converter: tools.yml_properties_converter.en
   }
 };
 

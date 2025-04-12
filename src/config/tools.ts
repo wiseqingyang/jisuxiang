@@ -2,7 +2,7 @@ import {
   faCode, faExchangeAlt, faClock, faGlobe, faLink, faLock, 
   faImage, faCogs, faFileCode, faKey, faFont, 
   faCalendarAlt, faPalette, faEdit, faRuler, faNetworkWired,
-  faEraser, faCalculator
+  faEraser, faCalculator, faFileAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { Tool } from '@/types/tools';
 
@@ -147,6 +147,12 @@ const tools: Tool[] = [
     icon: faCalculator,
     category: ['encoding'],
     keywords: ['进制转换', '进制', '二进制', '八进制', '十进制', '十六进制', '二进制转换', '十六进制转换', 'binary', 'hex', 'decimal', 'octal', 'base conversion', 'jinzhi', 'jzzh', 'jz']
+  },
+  {
+    code: 'yml_properties_converter',
+    icon: faFileAlt,
+    category: ['code'],
+    keywords: ['yml', 'yaml', 'properties', 'yml转properties', 'properties转yml', '配置文件', '转换工具', 'yml互转properties', 'yaml互转properties', '配置转换', 'peizhi', 'pz', 'zhuanhuan', 'zh']
   }
 ] as Tool[];
 

@@ -21,6 +21,7 @@ import timezoneConverter from './timezone_converter';
 import unicodeConverter from './unicode_converter';
 import urlEncoder from './url_encoder';
 import numberBaseConverter from './number_base_converter';
+import ymlPropertiesConverter from './yml_properties_converter';
 
 export const tools = {
   json_formatter: jsonFormatter,
@@ -45,7 +46,8 @@ export const tools = {
   timezone_converter: timezoneConverter,
   unicode_converter: unicodeConverter,
   url_encoder: urlEncoder,
-  number_base_converter: numberBaseConverter
+  number_base_converter: numberBaseConverter,
+  yml_properties_converter: ymlPropertiesConverter
 };
 
 export default tools; 
