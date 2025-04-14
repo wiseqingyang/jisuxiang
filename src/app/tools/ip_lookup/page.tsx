@@ -315,8 +315,18 @@ export default function IpLookup() {
         throw new Error(t('tools.ip_lookup.errors.query_failed'));
       }
       
-      // 使用第一个有效结果
-      setIpInfo(validResults[0]);
+      // 优先选择包含更多有效信息的结果
+      const bestResult = validResults.reduce((best, current) => {
+        // 计算当前结果中非"未知"值的数量
+        const bestValidFieldCount = Object.values(best).filter(val => val !== t('tools.ip_lookup.unknown')).length;
+        const currentValidFieldCount = Object.values(current).filter(val => val !== t('tools.ip_lookup.unknown')).length;
+        
+        // 如果当前结果有更多有效信息，则选择它
+        return currentValidFieldCount > bestValidFieldCount ? current : best;
+      }, validResults[0]);
+      
+      // 使用最佳结果
+      setIpInfo(bestResult);
     } catch (error) {
       setError(error instanceof Error ? error.message : t('tools.ip_lookup.errors.query_failed'));
     } finally {
