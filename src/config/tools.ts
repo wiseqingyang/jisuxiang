@@ -153,6 +153,12 @@ const tools: Tool[] = [
     icon: faFileAlt,
     category: ['code'],
     keywords: ['yml', 'yaml', 'properties', 'yml转properties', 'properties转yml', '配置文件', '转换工具', 'yml互转properties', 'yaml互转properties', '配置转换', 'peizhi', 'pz', 'zhuanhuan', 'zh']
+  },
+  {
+    code: 'base64_to_image',
+    icon: faImage,
+    category: ['image', 'encoding'],
+    keywords: ['base64', 'base64转图片', '图片转base64', '图片', '解码', '编码', '转换', 'base64 to image', 'image to base64', 'image decoder', 'image encoder', 'tupian', 'tp', 'jm', 'bm', 'zhuanhuan', 'zh', 'base64转换']
   }
 ] as Tool[];
 

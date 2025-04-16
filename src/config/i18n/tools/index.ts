@@ -22,6 +22,7 @@ import unicodeConverter from './unicode_converter';
 import urlEncoder from './url_encoder';
 import numberBaseConverter from './number_base_converter';
 import ymlPropertiesConverter from './yml_properties_converter';
+import base64ToImage from './base64_to_image';
 
 export const tools = {
   json_formatter: jsonFormatter,
@@ -47,7 +48,8 @@ export const tools = {
   unicode_converter: unicodeConverter,
   url_encoder: urlEncoder,
   number_base_converter: numberBaseConverter,
-  yml_properties_converter: ymlPropertiesConverter
+  yml_properties_converter: ymlPropertiesConverter,
+  base64_to_image: base64ToImage
 };
 
 export default tools; 

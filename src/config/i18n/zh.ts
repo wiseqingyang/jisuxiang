@@ -27,7 +27,8 @@ export const zh = {
     unicode_converter: tools.unicode_converter.zh,
     url_encoder: tools.url_encoder.zh,
     number_base_converter: tools.number_base_converter.zh,
-    yml_properties_converter: tools.yml_properties_converter.zh
+    yml_properties_converter: tools.yml_properties_converter.zh,
+    base64_to_image: tools.base64_to_image.zh
   }
 };
 
