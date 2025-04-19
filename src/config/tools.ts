@@ -159,6 +159,12 @@ const tools: Tool[] = [
     icon: faImage,
     category: ['image', 'encoding'],
     keywords: ['base64', 'base64转图片', '图片转base64', '图片', '解码', '编码', '转换', 'base64 to image', 'image to base64', 'image decoder', 'image encoder', 'tupian', 'tp', 'jm', 'bm', 'zhuanhuan', 'zh', 'base64转换']
+  },
+  {
+    code: 'image_watermark',
+    icon: faImage,
+    category: ['image'],
+    keywords: ['图片水印', '水印', '水印添加', '图片', '文字水印', '图片水印', 'watermark', 'image watermark', 'tupian shuiyin', 'tpshuiyin', 'shuiyin', 'sy', 'tp']
   }
 ] as Tool[];
 

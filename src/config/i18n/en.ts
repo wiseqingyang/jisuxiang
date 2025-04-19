@@ -28,7 +28,8 @@ export const en = {
     url_encoder: tools.url_encoder.en,
     number_base_converter: tools.number_base_converter.en,
     yml_properties_converter: tools.yml_properties_converter.en,
-    base64_to_image: tools.base64_to_image.en
+    base64_to_image: tools.base64_to_image.en,
+    image_watermark: tools.image_watermark.en
   }
 };
 
