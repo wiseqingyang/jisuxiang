@@ -165,6 +165,12 @@ const tools: Tool[] = [
     icon: faImage,
     category: ['image'],
     keywords: ['图片水印', '水印', '水印添加', '图片', '文字水印', '图片水印', 'watermark', 'image watermark', 'tupian shuiyin', 'tpshuiyin', 'shuiyin', 'sy', 'tp']
+  },
+  {
+    code: 'image_to_ico',
+    icon: faImage,
+    category: ['image'],
+    keywords: ['图标', 'ico', '图片转ico', 'icon', '图标生成', '图标转换', 'favicon', '网站图标', 'tubiao', 'tb', 'zhuanicon', 'icon转换', 'icon生成']
   }
 ] as Tool[];
 

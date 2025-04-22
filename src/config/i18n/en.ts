@@ -29,7 +29,8 @@ export const en = {
     number_base_converter: tools.number_base_converter.en,
     yml_properties_converter: tools.yml_properties_converter.en,
     base64_to_image: tools.base64_to_image.en,
-    image_watermark: tools.image_watermark.en
+    image_watermark: tools.image_watermark.en,
+    image_to_ico: tools.image_to_ico.en
   }
 };
 
