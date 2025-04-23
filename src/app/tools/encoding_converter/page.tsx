@@ -36,7 +36,8 @@ export default function EncodingConverter() {
     { id: 'base64', name: 'Base64', description: t('tools.encoding_converter.base64_desc') },
     { id: 'url', name: 'URL', description: t('tools.encoding_converter.url_desc') },
     { id: 'unicode', name: 'Unicode', description: t('tools.encoding_converter.unicode_desc') },
-    { id: 'html', name: 'HTML', description: t('tools.encoding_converter.html_desc') }
+    { id: 'html_entity', name: 'HTML实体编码', description: t('tools.encoding_converter.html_entity_desc') },
+    { id: 'html_escape', name: 'HTML转义', description: t('tools.encoding_converter.html_escape_desc') }
   ];
   
   // 状态管理
@@ -97,7 +98,24 @@ export default function EncodingConverter() {
           );
         }
       }
-      else if (type === 'html') {
+      else if (type === 'html_entity') {
+        if (op === 'encode') {
+          // 将文本转换为HTML十六进制实体格式 (&#x6C49;)
+          return Array.from(text)
+            .map(char => {
+              const codePoint = char.codePointAt(0) as number;
+              return '&#x' + codePoint.toString(16).toLowerCase() + ';';
+            })
+            .join('');
+        } else {
+          // 将HTML十六进制实体格式转换回文本
+          // 正则表达式匹配 &#xXXXX; 格式的十六进制值
+          return text.replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => 
+            String.fromCodePoint(parseInt(hex, 16))
+          );
+        }
+      }
+      else if (type === 'html_escape') {
         if (op === 'encode') {
           const el = document.createElement('div');
           el.textContent = text;
@@ -117,8 +135,10 @@ export default function EncodingConverter() {
         throw new Error(t('tools.encoding_converter.invalid_url'));
       } else if (type === 'unicode' && op === 'decode') {
         throw new Error(t('tools.encoding_converter.invalid_unicode'));
-      } else if (type === 'html' && op === 'decode') {
-        throw new Error(t('tools.encoding_converter.invalid_html'));
+      } else if (type === 'html_entity' && op === 'decode') {
+        throw new Error(t('tools.encoding_converter.invalid_html_entity'));
+      } else if (type === 'html_escape' && op === 'decode') {
+        throw new Error(t('tools.encoding_converter.invalid_html_escape'));
       }
       throw err;
     }
@@ -180,7 +200,11 @@ export default function EncodingConverter() {
         encode: t('tools.encoding_converter.example_text'),
         decode: '\\u4f60\\u597d\\uff0c\\u4e16\\u754c\\uff01'
       },
-      html: {
+      html_entity: {
+        encode: t('tools.encoding_converter.example_text'),
+        decode: '&#x4f60;&#x597d;&#xff0c;&#x4e16;&#x754c;&#xff01;'
+      },
+      html_escape: {
         encode: '<div class="example">' + t('tools.encoding_converter.html_example') + '</div>',
         decode: '&lt;div class=&quot;example&quot;&gt;HTML示例 &amp; 特殊字符&lt;/div&gt;'
       }
@@ -334,8 +358,11 @@ export default function EncodingConverter() {
               {encodingType === 'unicode' && (
                 "Unicode编码使用\\u前缀后跟四位十六进制数字表示字符，可以表示几乎所有语言的字符，如中文、日文等。"
               )}
-              {encodingType === 'html' && (
-                "HTML编码将特殊字符（如<、>、&等）转换为HTML实体，以防止它们被浏览器解释为HTML标签或特殊结构。"
+              {encodingType === 'html_entity' && (
+                "HTML实体编码使用十六进制实体格式（如&#x6C49;）表示Unicode字符，每个字符转换为对应的码点十六进制值。"
+              )}
+              {encodingType === 'html_escape' && (
+                "HTML转义将特殊字符（如<、>、&等）转换为HTML实体，以防止它们被浏览器解释为HTML标签或特殊结构。"
               )}
             </p>
           </div>

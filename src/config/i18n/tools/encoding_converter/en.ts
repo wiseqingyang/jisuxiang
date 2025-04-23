@@ -1,10 +1,11 @@
 export const encodingConverterEn = {
   title: 'Encoding Converter',
-  description: 'Base64/URL/Unicode encoding and decoding tool',
+  description: 'Base64/URL/Unicode/HTML Entity/HTML Escape encoding and decoding tool',
   base64_desc: 'Encode text to Base64 string or decode Base64 string to text',
   url_desc: 'Encode or decode special characters in URLs',
   unicode_desc: 'Convert text to Unicode encoding or Unicode encoding to text',
-  html_desc: 'Encode or decode special characters in HTML',
+  html_entity_desc: 'Convert text to HTML hexadecimal entities or HTML hexadecimal entities to text',
+  html_escape_desc: 'Escape or unescape special characters in HTML',
   encode: 'Encode',
   decode: 'Decode',
   load_example: 'Load Example',
@@ -25,7 +26,8 @@ export const encodingConverterEn = {
   invalid_base64: 'Invalid Base64 encoded string',
   invalid_url: 'Invalid URL encoded string',
   invalid_unicode: 'Invalid Unicode encoded string',
-  invalid_html: 'Invalid HTML encoded string',
+  invalid_html_entity: 'Invalid HTML entity encoded string',
+  invalid_html_escape: 'Invalid HTML escaped string',
   copy_failed: 'Copy failed:',
   clipboard_error: 'Failed to copy to clipboard'
 };

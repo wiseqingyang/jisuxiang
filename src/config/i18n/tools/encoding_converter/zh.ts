@@ -1,10 +1,11 @@
 export const encodingConverterZh = {
   title: '编码转换工具',
-  description: 'Base64/URL/Unicode编解码转换工具',
+  description: 'Base64/URL/Unicode/HTML实体/HTML转义编解码转换工具',
   base64_desc: '将文本编码为Base64字符串或将Base64字符串解码为文本',
   url_desc: '对URL中的特殊字符进行编码或解码',
   unicode_desc: '将文本转换为Unicode编码或将Unicode编码转换为文本',
-  html_desc: '对HTML中的特殊字符进行编码或解码',
+  html_entity_desc: '将文本转换为HTML十六进制实体格式或将HTML十六进制实体转换为文本',
+  html_escape_desc: '对HTML中的特殊字符进行转义或反转义',
   encode: '编码',
   decode: '解码',
   load_example: '加载示例',
@@ -25,7 +26,8 @@ export const encodingConverterZh = {
   invalid_base64: '无效的Base64编码字符串',
   invalid_url: '无效的URL编码字符串',
   invalid_unicode: '无效的Unicode编码字符串',
-  invalid_html: '无效的HTML编码字符串',
+  invalid_html_entity: '无效的HTML实体编码字符串',
+  invalid_html_escape: '无效的HTML转义字符串',
   copy_failed: '复制失败:',
   clipboard_error: '复制到剪贴板失败'
 };
