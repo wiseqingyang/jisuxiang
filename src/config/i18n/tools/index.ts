@@ -25,6 +25,7 @@ import ymlPropertiesConverter from './yml_properties_converter';
 import base64ToImage from './base64_to_image';
 import imageWatermark from './image_watermark';
 import imageToIco from './image_to_ico';
+import cronGenerator from './cron_generator';
 
 export const tools = {
   json_formatter: jsonFormatter,
@@ -53,7 +54,8 @@ export const tools = {
   yml_properties_converter: ymlPropertiesConverter,
   base64_to_image: base64ToImage,
   image_watermark: imageWatermark,
-  image_to_ico: imageToIco
+  image_to_ico: imageToIco,
+  cron_generator: cronGenerator
 };
 
 export default tools; 

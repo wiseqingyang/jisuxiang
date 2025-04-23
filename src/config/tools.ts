@@ -171,6 +171,12 @@ const tools: Tool[] = [
     icon: faImage,
     category: ['image'],
     keywords: ['图标', 'ico', '图片转ico', 'icon', '图标生成', '图标转换', 'favicon', '网站图标', 'tubiao', 'tb', 'zhuanicon', 'icon转换', 'icon生成']
+  },
+  {
+    code: 'cron_generator',
+    icon: faCalendarAlt,
+    category: ['datetime'],
+    keywords: ['cron', 'cron表达式', '定时任务', '调度', '表达式生成', '执行时间', 'crontab', 'quartz', 'schedule', 'dingshi', 'dingshibiaodashi', 'dsrw', 'bds', 'cronbds']
   }
 ] as Tool[];
 

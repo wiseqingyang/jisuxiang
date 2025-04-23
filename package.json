@@ -17,6 +17,8 @@
     "@types/crypto-js": "^4.2.2",
     "@uiw/react-json-view": "^2.0.0-alpha.30",
     "compressorjs": "^1.2.1",
+    "cron-parser": "^5.1.1",
+    "cronstrue": "^2.59.0",
     "crypto-js": "^4.2.0",
     "fabric": "^6.6.4",
     "iconv-lite": "^0.6.3",

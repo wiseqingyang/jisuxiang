@@ -30,7 +30,8 @@ export const zh = {
     yml_properties_converter: tools.yml_properties_converter.zh,
     base64_to_image: tools.base64_to_image.zh,
     image_watermark: tools.image_watermark.zh,
-    image_to_ico: tools.image_to_ico.zh
+    image_to_ico: tools.image_to_ico.zh,
+    cron_generator: tools.cron_generator.zh
   }
 };
 
