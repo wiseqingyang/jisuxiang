@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
+export const runtime = 'edge';
 // API密钥，实际应用中应该从环境变量获取
 const API_KEY = 'markitdown-api-key-hyrtjhyt464h5346vt3453y34534tsfsf';
 const API_URL = 'http://jisuxiang-markitdown:8000/convert';

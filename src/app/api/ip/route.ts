@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import iconv from 'iconv-lite';
+export const runtime = 'edge';
 
 // 定义API源
 const API_SOURCES = [
